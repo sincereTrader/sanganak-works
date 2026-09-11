@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
@@ -24,7 +25,7 @@ export function Nav() {
         <nav className="site-nav" aria-label="Primary navigation">
           <Link className="brand-lockup" href="/" aria-label="Sanganak Works home">
             <span className="brand-mark" aria-hidden="true">
-              SW
+              <Image src="/brand/logo-crop.png" alt="" width={48} height={48} priority />
             </span>
             <span className="brand-wordmark">Sanganak Works</span>
           </Link>

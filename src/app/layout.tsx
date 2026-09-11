@@ -27,6 +27,11 @@ export const metadata: Metadata = {
     type: "website",
     url: "/",
   },
+  icons: {
+    icon: "/brand/logo-crop.png",
+    shortcut: "/brand/logo-crop.png",
+    apple: "/brand/logo-crop.png",
+  },
 };
 
 export default function RootLayout({

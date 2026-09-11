@@ -99,16 +99,15 @@ a:focus-visible {
 
 .brand-mark {
   display: grid;
-  width: 38px;
-  height: 34px;
+  width: 44px;
+  height: 44px;
   place-items: center;
-  border: 2px solid var(--color-foreground);
-  background: var(--color-teal);
-  box-shadow: 3px 3px 0 var(--color-coral);
-  color: var(--color-canvas);
-  font-size: 13px;
-  font-weight: 700;
-  line-height: 1;
+}
+
+.brand-mark img {
+  display: block;
+  width: 44px;
+  height: 44px;
 }
 
 .brand-wordmark {
