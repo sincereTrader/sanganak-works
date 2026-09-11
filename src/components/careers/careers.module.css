@@ -1,0 +1,418 @@
+.page {
+  --ink: var(--color-canvas, #050505);
+  --cream: var(--color-foreground, #f2e4c8);
+  --surface: var(--color-surface, #0c0c0c);
+  --paper: #f8eed8;
+  --line: var(--color-border, #34312d);
+  --muted: var(--color-muted, #b8b6ad);
+  --teal: var(--color-teal, #2db7b0);
+  --amber: var(--color-orange, #f2a51a);
+  --coral: var(--color-coral, #ef5b4c);
+  min-height: 100vh;
+  overflow: hidden;
+  background: var(--ink);
+  color: var(--cream);
+  font-family: var(--font-mono, "IBM Plex Mono", monospace);
+}
+
+.container {
+  width: min(100% - 96px, 1344px);
+  margin-inline: auto;
+}
+
+.indexIntro {
+  min-height: 410px;
+  border-bottom: 1px solid var(--line);
+}
+
+.indexIntroInner {
+  min-height: 410px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 64px;
+}
+
+.displayTitle,
+.roleTitle,
+.editorialTitle {
+  margin: 0;
+  font-family: var(--font-display, "Bricolage Grotesque", sans-serif);
+  font-weight: 700;
+  letter-spacing: -0.055em;
+  line-height: 0.92;
+}
+
+.displayTitle {
+  max-width: 650px;
+  font-size: clamp(64px, 7vw, 100px);
+}
+
+.introCopy {
+  max-width: 620px;
+  font-size: 18px;
+  line-height: 1.62;
+}
+
+.introCopy p,
+.prose p {
+  margin: 0;
+}
+
+.introCopy p + p,
+.prose p + p {
+  margin-top: 20px;
+}
+
+.rolesSection {
+  min-height: 964px;
+  padding: 72px 0 80px;
+}
+
+.rolesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.roleCard {
+  min-height: 365px;
+  padding: 42px 40px 36px;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid var(--cream);
+  color: var(--card-ink);
+  background: var(--card-bg);
+  box-shadow: 8px 8px 0 var(--card-shadow);
+  text-decoration: none;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.roleCard:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 11px 11px 0 var(--card-shadow);
+}
+
+.roleCard:focus-visible,
+.applyButton:focus-visible,
+.inlineLink:focus-visible {
+  outline: 3px solid var(--cream);
+  outline-offset: 5px;
+}
+
+.cardDark { --card-bg: var(--surface); --card-ink: var(--cream); --card-shadow: var(--teal); }
+.cardAmber { --card-bg: var(--amber); --card-ink: var(--ink); --card-shadow: var(--coral); }
+.cardTeal { --card-bg: var(--teal); --card-ink: var(--ink); --card-shadow: var(--cream); }
+.cardCoral { --card-bg: var(--coral); --card-ink: var(--ink); --card-shadow: var(--amber); }
+
+.cardTitle {
+  margin: 0;
+  max-width: 570px;
+  font-family: var(--font-display, "Bricolage Grotesque", sans-serif);
+  font-size: clamp(34px, 3.2vw, 54px);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+}
+
+.cardBlurb {
+  max-width: 565px;
+  margin: 28px 0 0;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.cardMeta {
+  margin-top: auto;
+  padding-top: 32px;
+  color: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.55;
+  letter-spacing: 0.045em;
+  text-transform: uppercase;
+}
+
+.cardDark .cardMeta { color: var(--teal); }
+
+.roleHero {
+  min-height: 430px;
+  border-bottom: 1px solid var(--line);
+}
+
+.roleHeroInner {
+  min-height: 430px;
+  padding-block: 72px 64px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 68px;
+}
+
+.roleTitle {
+  max-width: 650px;
+  font-size: clamp(62px, 6.8vw, 96px);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 32px;
+}
+
+.chip {
+  padding: 8px 11px;
+  border: 1px solid var(--cream);
+  color: var(--cream);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+}
+
+.prose {
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.inlineLink {
+  color: inherit;
+  text-decoration-color: var(--coral);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.detailArea {
+  min-height: var(--detail-height, 970px);
+  padding: 66px 0 78px;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.detailGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 24px;
+}
+
+.detailColumn {
+  display: grid;
+  gap: 24px;
+}
+
+.detailCard {
+  padding: 38px 40px 42px;
+  border: 2px solid var(--ink);
+}
+
+.aboutCard { background: var(--paper); box-shadow: 8px 8px 0 var(--teal); }
+.taskCard { background: var(--coral); box-shadow: 8px 8px 0 var(--amber); }
+.termsCard { background: var(--amber); box-shadow: 8px 8px 0 var(--coral); }
+.criteriaCard { background: var(--teal); box-shadow: 8px 8px 0 var(--ink); }
+
+.detailCard h2,
+.aiBlock h2 {
+  margin: 0 0 28px;
+  font-family: var(--font-display, "Bricolage Grotesque", sans-serif);
+  font-size: clamp(30px, 3vw, 46px);
+  line-height: 1;
+  letter-spacing: -0.035em;
+}
+
+.detailCard ul,
+.aiBlock ul {
+  margin: 0;
+  padding-left: 21px;
+}
+
+.detailCard li,
+.aiBlock li {
+  padding-left: 7px;
+  font-size: 15px;
+  line-height: 1.62;
+}
+
+.detailCard li + li,
+.aiBlock li + li {
+  margin-top: 14px;
+}
+
+.taskText {
+  margin: 0;
+  font-family: var(--font-display, "Bricolage Grotesque", sans-serif);
+  font-size: 27px;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+}
+
+.resumeNote {
+  margin: 30px 0 0;
+  padding-top: 24px;
+  border-top: 1px solid currentColor;
+  font-size: 13px;
+  font-style: italic;
+  line-height: 1.55;
+}
+
+.applyFooter {
+  min-height: 214px;
+  display: flex;
+  align-items: center;
+  background: var(--ink);
+}
+
+.applyInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+}
+
+.applyLabel {
+  margin: 0;
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: 0.11em;
+}
+
+.applyButton {
+  min-height: 60px;
+  padding: 18px 28px;
+  display: inline-flex;
+  align-items: center;
+  border: 2px solid var(--cream);
+  color: var(--ink);
+  background: var(--coral);
+  box-shadow: 7px 7px 0 var(--amber);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+}
+
+.aiHero {
+  min-height: 700px;
+  border-bottom: 1px solid var(--line);
+}
+
+.aiHeroInner {
+  min-height: 700px;
+  padding-block: 84px;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+  gap: 88px;
+}
+
+.aiScope,
+.aiTerms,
+.aiCriteria {
+  color: var(--ink);
+}
+
+.aiScope { min-height: 800px; padding: 76px 0; background: var(--paper); }
+.aiTerms { min-height: 620px; padding: 76px 0; background: var(--amber); }
+.aiCriteria { min-height: 520px; padding: 76px 0; background: var(--teal); }
+
+.aiGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 80px;
+}
+
+.aiBlock {
+  font-size: 15px;
+  line-height: 1.64;
+}
+
+.aiBlock + .aiBlock { margin-top: 36px; }
+
+.callout,
+.renegotiation {
+  margin: 36px 0 0;
+  padding: 24px 26px;
+  border: 2px solid var(--ink);
+  background: var(--coral);
+  box-shadow: 7px 7px 0 var(--amber);
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.renegotiation {
+  background: var(--paper);
+  box-shadow: 7px 7px 0 var(--coral);
+  font-weight: 400;
+}
+
+.editorialTitle {
+  max-width: 540px;
+  font-size: clamp(60px, 7vw, 98px);
+}
+
+.criteriaLead {
+  margin: 0 0 28px;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.aiApply { min-height: 194px; }
+
+@media (max-width: 1023px) {
+  .container { width: min(100% - 56px, 900px); }
+  .indexIntroInner,
+  .roleHeroInner,
+  .aiHeroInner,
+  .aiGrid { gap: 40px; }
+  .detailCard { padding-inline: 30px; }
+  .roleCard { padding-inline: 30px; }
+}
+
+@media (max-width: 767px) {
+  .container { width: min(100% - 36px, 680px); }
+  .indexIntro,
+  .indexIntroInner,
+  .roleHero,
+  .roleHeroInner,
+  .aiHero,
+  .aiHeroInner { min-height: auto; }
+  .indexIntroInner,
+  .roleHeroInner,
+  .aiHeroInner,
+  .aiGrid,
+  .detailGrid { grid-template-columns: 1fr; }
+  .indexIntroInner { padding-block: 76px; }
+  .displayTitle { font-size: clamp(50px, 17vw, 76px); }
+  .rolesSection { min-height: auto; padding: 48px 0 72px; }
+  .rolesGrid { grid-template-columns: 1fr; gap: 25px; }
+  .roleCard { min-height: 310px; padding: 32px 28px; box-shadow: 6px 6px 0 var(--card-shadow); }
+  .cardTitle { font-size: clamp(38px, 12vw, 52px); }
+  .roleHeroInner { padding-block: 68px; }
+  .roleTitle { font-size: clamp(52px, 17vw, 76px); }
+  .detailArea,
+  .aiScope,
+  .aiTerms,
+  .aiCriteria { min-height: auto; padding-block: 54px 64px; }
+  .detailGrid { gap: 24px; }
+  .detailColumn { display: contents; }
+  .aboutCard { order: 1; }
+  .taskCard { order: 2; }
+  .termsCard { order: 3; }
+  .criteriaCard { order: 4; }
+  .detailCard { padding: 32px 27px 36px; box-shadow: 6px 6px 0 var(--teal); }
+  .taskCard { box-shadow: 6px 6px 0 var(--amber); }
+  .termsCard { box-shadow: 6px 6px 0 var(--coral); }
+  .criteriaCard { box-shadow: 6px 6px 0 var(--ink); }
+  .applyFooter { min-height: 230px; padding-block: 48px; }
+  .applyInner { align-items: flex-start; flex-direction: column; gap: 28px; }
+  .applyButton { width: 100%; justify-content: center; }
+  .aiHeroInner { padding-block: 72px; }
+  .aiScope .aiGrid,
+  .aiTerms .aiGrid,
+  .aiCriteria .aiGrid { gap: 44px; }
+  .editorialTitle { font-size: clamp(54px, 17vw, 80px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .roleCard { transition: none; }
+}

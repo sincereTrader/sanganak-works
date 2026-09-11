@@ -1,0 +1,78 @@
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
+
+const links = [
+  { label: "Saras", href: "https://saras.works", external: true },
+  { label: "Masala Dew", href: "https://masaladew.com", external: true },
+  { label: "Services", href: "/services", external: false },
+  { label: "Careers", href: "/careers", external: false },
+] as const;
+
+export function Nav() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  return (
+    <>
+      <a className="skip-link" href="#main-content">
+        Skip to content
+      </a>
+      <header className="site-header">
+        <nav className="site-nav" aria-label="Primary navigation">
+          <Link className="brand-lockup" href="/" aria-label="Sanganak Works home">
+            <span className="brand-mark" aria-hidden="true">
+              SW
+            </span>
+            <span className="brand-wordmark">Sanganak Works</span>
+          </Link>
+
+          <button
+            className="menu-trigger"
+            type="button"
+            aria-controls="primary-menu"
+            aria-expanded={menuOpen}
+            aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+            onClick={() => setMenuOpen((open) => !open)}
+          >
+            <span aria-hidden="true">{menuOpen ? "×" : "≡"}</span>
+          </button>
+
+          <div
+            id="primary-menu"
+            className="nav-links"
+            data-open={menuOpen ? "true" : "false"}
+          >
+            {links.map((link) => {
+              if (link.external) {
+                return (
+                  <a key={link.label} href={link.href} onClick={() => setMenuOpen(false)}>
+                    {link.label}
+                  </a>
+                );
+              }
+
+              const active =
+                pathname === link.href ||
+                (link.href === "/careers" && pathname?.startsWith(`${link.href}/`));
+
+              return (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  aria-current={active ? "page" : undefined}
+                  data-active={active ? "true" : undefined}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
+          </div>
+        </nav>
+      </header>
+    </>
+  );
+}
