@@ -7,6 +7,7 @@ export default function DesignLeadPage() {
   return (
     <RoleDetail
       title="Lead, Design and Branding"
+      product="Saras"
       metadata={["REMOTE", "LEAD", "AI-NATIVE DESIGN"]}
       intro={
         <p>

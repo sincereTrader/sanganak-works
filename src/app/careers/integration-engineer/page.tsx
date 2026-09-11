@@ -7,6 +7,7 @@ export default function IntegrationEngineerPage() {
   return (
     <RoleDetail
       title="Integration Engineer"
+      product="Saras"
       metadata={["REMOTE", "CONTRACT", "2-WEEK PROBATION"]}
       intro={
         <p>

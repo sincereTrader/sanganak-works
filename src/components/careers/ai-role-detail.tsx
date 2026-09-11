@@ -1,5 +1,5 @@
 import { Nav } from "@/components/nav";
-import { ApplyFooter, ManifestoLink, SarasLink } from "./role-detail";
+import { ApplyFooter, ManifestoLink, ProductBadge, SarasLink } from "./role-detail";
 import styles from "./careers.module.css";
 
 export function AiRoleDetail() {
@@ -14,6 +14,7 @@ export function AiRoleDetail() {
               AI Engineer (Contract)
             </h1>
             <div className={styles.chips} aria-label="Role details">
+              <ProductBadge product="Saras" />
               <span className={styles.chip}>REMOTE</span>
               <span className={styles.chip}>3 MONTHS</span>
               <span className={styles.chip}>2+ YEARS</span>

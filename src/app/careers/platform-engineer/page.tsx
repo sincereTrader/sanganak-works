@@ -7,6 +7,7 @@ export default function PlatformEngineerPage() {
   return (
     <RoleDetail
       title="Platform Engineer"
+      product="Saras"
       metadata={["REMOTE", "CONTRACT", "INFRASTRUCTURE"]}
       intro={
         <p>

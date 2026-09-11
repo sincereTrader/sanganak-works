@@ -1,4 +1,5 @@
 import { render, screen, within } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { describe, expect, it } from "vitest";
 import CareersPage from "./page";
 import AgentEngineerPage from "./agent-engineer/page";
@@ -19,26 +20,31 @@ const roleRoutes = [
     Page: AgentEngineerPage,
     title: "Agent Engineer (Intern)",
     criticalCopy: "INTERNSHIP",
+    product: "Saras",
   },
   {
     Page: IntegrationEngineerPage,
     title: "Integration Engineer",
     criticalCopy: "Build payment failsafes so revenue never leaks silently",
+    product: "Saras",
   },
   {
     Page: PlatformEngineerPage,
     title: "Platform Engineer",
     criticalCopy: "Scale the agent infrastructure to 1000+ concurrent users with room to keep growing",
+    product: "Saras",
   },
   {
     Page: AiEngineerPage,
     title: "AI Engineer (Contract)",
     criticalCopy: "3 MONTHS",
+    product: "Saras",
   },
   {
     Page: DesignLeadPage,
     title: "Lead, Design and Branding",
     criticalCopy: "AI-NATIVE DESIGN",
+    product: "Saras",
   },
 ] as const;
 
@@ -60,15 +66,53 @@ describe("Careers routes", () => {
     expect(main).toHaveAttribute("id", "main-content");
   });
 
+  it("filters listed roles by product and clears the active filter", async () => {
+    const user = userEvent.setup();
+    render(<CareersPage />);
+
+    const filters = screen.getByRole("group", { name: "Filter open roles by product" });
+    const sarasFilter = within(filters).getByRole("button", { name: "Saras" });
+    const masalaDewFilter = within(filters).getByRole("button", { name: "Masala Dew" });
+    const clearFilter = within(filters).getByRole("button", { name: "Clear filters" });
+
+    expect(sarasFilter).toHaveAttribute("aria-pressed", "false");
+    expect(masalaDewFilter).toHaveAttribute("aria-pressed", "false");
+    expect(clearFilter).toBeDisabled();
+
+    await user.click(masalaDewFilter);
+
+    expect(masalaDewFilter).toHaveAttribute("aria-pressed", "true");
+    expect(await screen.findByText("No open roles for Masala Dew right now.")).toBeInTheDocument();
+    for (const [name] of listedRoles) {
+      expect(screen.queryByRole("link", { name: new RegExp(`^${name}`) })).not.toBeInTheDocument();
+    }
+
+    await user.click(clearFilter);
+
+    expect(masalaDewFilter).toHaveAttribute("aria-pressed", "false");
+    expect(clearFilter).toBeDisabled();
+    for (const [name] of listedRoles) {
+      expect(await screen.findByRole("link", { name: new RegExp(`^${name}`) })).toBeInTheDocument();
+    }
+
+    await user.click(sarasFilter);
+
+    expect(sarasFilter).toHaveAttribute("aria-pressed", "true");
+    for (const [name] of listedRoles) {
+      expect(screen.getByRole("link", { name: new RegExp(`^${name}`) })).toBeInTheDocument();
+    }
+  });
+
   it.each(roleRoutes)(
     "renders $title with exact shared destinations and critical copy",
-    ({ Page, title, criticalCopy }) => {
+    ({ Page, title, criticalCopy, product }) => {
       render(<Page />);
 
       const main = screen.getByRole("main");
       expect(within(main).getAllByRole("heading", { level: 1 })).toHaveLength(1);
       expect(within(main).getByRole("heading", { level: 1, name: title })).toBeInTheDocument();
       expect(within(main).getByText(criticalCopy)).toBeInTheDocument();
+      expect(within(main).getByLabelText(`Product: ${product}`)).toHaveTextContent(product);
       expect(within(main).getByRole("link", { name: "Saras" })).toHaveAttribute(
         "href",
         "https://saras.works",

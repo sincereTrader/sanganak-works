@@ -5,6 +5,7 @@ import styles from "./careers.module.css";
 
 type RoleDetailProps = {
   title: string;
+  product: "Saras" | "Masala Dew";
   metadata: readonly string[];
   intro: ReactNode;
   about: readonly ReactNode[];
@@ -14,6 +15,14 @@ type RoleDetailProps = {
   resumeNote: ReactNode;
   tall?: boolean;
 };
+
+export function ProductBadge({ product }: { product: "Saras" | "Masala Dew" }) {
+  return (
+    <span className={`${styles.chip} ${styles.productChip}`} aria-label={`Product: ${product}`}>
+      {product}
+    </span>
+  );
+}
 
 export function SarasLink() {
   return (
@@ -61,6 +70,7 @@ export function ApplyFooter({ compact = false }: { compact?: boolean }) {
 
 export function RoleDetail({
   title,
+  product,
   metadata,
   intro,
   about,
@@ -81,6 +91,7 @@ export function RoleDetail({
               {title}
             </h1>
             <div className={styles.chips} aria-label="Role details">
+              <ProductBadge product={product} />
               {metadata.map((item) => (
                 <span className={styles.chip} key={item}>
                   {item}

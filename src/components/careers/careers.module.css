@@ -64,6 +64,90 @@
   margin-top: 20px;
 }
 
+.filterBar {
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.filterRail {
+  display: flex;
+  min-height: 78px;
+  align-items: center;
+  gap: 12px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.filterRail::-webkit-scrollbar {
+  display: none;
+}
+
+.filterLabel {
+  flex: 0 0 auto;
+  margin-right: 10px;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.tagButton,
+.clearButton {
+  flex: 0 0 auto;
+  min-height: 36px;
+  border: 1px solid var(--cream);
+  color: var(--cream);
+  background: transparent;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.035em;
+  transition: color 150ms ease, background 150ms ease, border-color 150ms ease,
+    transform 150ms ease, box-shadow 150ms ease;
+}
+
+.tagButton {
+  padding: 9px 15px;
+}
+
+.tagButton:hover {
+  border-color: var(--teal);
+  transform: translateY(-1px);
+}
+
+.tagButton[aria-pressed="true"] {
+  border-color: var(--teal);
+  color: var(--ink);
+  background: var(--teal);
+  box-shadow: 3px 3px 0 var(--coral);
+}
+
+.clearButton {
+  margin-left: auto;
+  padding: 9px 0 9px 18px;
+  border-color: transparent;
+  color: var(--coral);
+  text-transform: uppercase;
+}
+
+.clearButton:not(:disabled):hover {
+  color: var(--cream);
+}
+
+.clearButton:disabled {
+  color: var(--muted);
+  cursor: default;
+  opacity: 0.42;
+}
+
+.tagButton:focus-visible,
+.clearButton:focus-visible {
+  outline: 3px solid var(--cream);
+  outline-offset: 4px;
+}
+
 .rolesSection {
   min-height: 964px;
   padding: 72px 0 80px;
@@ -85,12 +169,48 @@
   background: var(--card-bg);
   box-shadow: 8px 8px 0 var(--card-shadow);
   text-decoration: none;
-  transition: transform 150ms ease, box-shadow 150ms ease;
+  animation: role-materialize 260ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  transition: opacity 180ms ease, transform 180ms ease, filter 180ms ease,
+    box-shadow 150ms ease;
 }
 
 .roleCard:hover {
   transform: translate(-2px, -2px);
   box-shadow: 11px 11px 0 var(--card-shadow);
+}
+
+.roleCard.roleCardExiting {
+  opacity: 0;
+  filter: blur(5px);
+  pointer-events: none;
+  transform: translateY(12px) scale(0.975);
+}
+
+@keyframes role-materialize {
+  from {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(12px) scale(0.975);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0) scale(1);
+  }
+}
+
+.emptyState {
+  grid-column: 1 / -1;
+  min-height: 240px;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  border: 1px dashed var(--line);
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+  text-align: center;
+  animation: role-materialize 260ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .roleCard:focus-visible,
@@ -167,6 +287,13 @@
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.09em;
+}
+
+.productChip {
+  border-color: var(--teal);
+  color: var(--ink);
+  background: var(--teal);
+  box-shadow: 3px 3px 0 var(--coral);
 }
 
 .prose {
@@ -383,6 +510,9 @@
   .detailGrid { grid-template-columns: 1fr; }
   .indexIntroInner { padding-block: 76px; }
   .displayTitle { font-size: clamp(50px, 17vw, 76px); }
+  .filterRail { min-height: 70px; gap: 9px; }
+  .filterLabel { margin-right: 5px; }
+  .clearButton { margin-left: 8px; padding-left: 10px; }
   .rolesSection { min-height: auto; padding: 48px 0 72px; }
   .rolesGrid { grid-template-columns: 1fr; gap: 25px; }
   .roleCard { min-height: 310px; padding: 32px 28px; box-shadow: 6px 6px 0 var(--card-shadow); }
@@ -414,5 +544,8 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .roleCard { transition: none; }
+  .roleCard,
+  .emptyState { animation: none; transition: none; }
+  .tagButton,
+  .clearButton { transition: none; }
 }
