@@ -1,0 +1,481 @@
+.editorialPage {
+  width: 100%;
+  overflow: clip;
+  background: var(--color-foreground, #f2e4c8);
+  color: var(--color-background, #050505);
+  font-family: var(--font-ui, var(--font-mono, "IBM Plex Mono")), monospace;
+  overflow-wrap: anywhere;
+}
+
+.editorialPage h1,
+.editorialPage h2,
+.editorialPage p,
+.editorialPage blockquote {
+  margin: 0;
+}
+
+.servicesIntro {
+  box-sizing: border-box;
+  display: flex;
+  min-height: 350px;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 48px;
+  padding: 48px;
+  border-bottom: 2px solid var(--color-background, #050505);
+}
+
+.servicesTitle {
+  color: var(--color-background, #050505);
+  font-family: var(--font-display, "Bricolage Grotesque"), sans-serif;
+  font-size: 92px;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  line-height: 86px;
+}
+
+.servicesLead {
+  width: 420px;
+  flex: 0 0 420px;
+  color: #332f2a;
+  font-size: 17px;
+  line-height: 27px;
+}
+
+.offerings {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  height: 520px;
+  padding: 48px;
+}
+
+.offeringCard {
+  box-sizing: border-box;
+  display: flex;
+  min-width: 0;
+  height: 424px;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px;
+  border: 2px solid var(--color-background, #050505);
+  color: #000;
+}
+
+.auditCard {
+  background: var(--color-primary, #2db7b0);
+  box-shadow: 8px 8px 0 var(--color-background, #050505);
+}
+
+.buildCard {
+  background: var(--color-secondary, #f2a51a);
+  box-shadow: 8px 8px 0 var(--color-accent, #ef5b4c);
+}
+
+.offeringCopy {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.offeringCopy h2 {
+  font-family: var(--font-display, "Bricolage Grotesque"), sans-serif;
+  font-size: 46px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 48px;
+}
+
+.offeringCopy p {
+  font-size: 16px;
+  line-height: 25px;
+}
+
+.offeringMeta {
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.servicesFooter {
+  box-sizing: border-box;
+  display: flex;
+  min-height: 324px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+  padding: 48px;
+  background: var(--color-background, #050505);
+}
+
+.servicesStatement {
+  width: 760px;
+  max-width: 65%;
+  flex: 0 1 760px;
+  color: var(--color-foreground, #f2e4c8);
+  font-family: var(--font-display, "Bricolage Grotesque"), sans-serif;
+  font-size: 27px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 38px;
+}
+
+.contactStack {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  gap: 12px;
+  color: var(--color-muted, #b8b6ad);
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.contactButton {
+  padding: 12px 16px;
+  background: var(--color-accent, #ef5b4c);
+  box-shadow: 4px 4px 0 var(--color-secondary, #f2a51a);
+  color: var(--color-background, #050505);
+  text-decoration: none;
+}
+
+.contactButton:hover,
+.contactButton:focus-visible {
+  box-shadow: 2px 2px 0 var(--color-secondary, #f2a51a);
+  transform: translate(2px, 2px);
+}
+
+.contactButton:focus-visible,
+.manifestoContact:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 4px;
+}
+
+.manifestoHero {
+  box-sizing: border-box;
+  display: flex;
+  height: 430px;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 48px;
+  border-bottom: 2px solid var(--color-background, #050505);
+}
+
+.manifestoHero h1 {
+  color: var(--color-background, #050505);
+  font-family: var(--font-display, "Bricolage Grotesque"), sans-serif;
+  font-size: 118px;
+  font-weight: 800;
+  letter-spacing: -0.055em;
+  line-height: 104px;
+}
+
+.manifestoMeta {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  color: #5d574f;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.manifestoBodyOne,
+.manifestoBodyTwo {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 508px));
+  justify-content: center;
+  gap: 84px;
+  padding-inline: 170px;
+}
+
+.manifestoBodyOne {
+  height: 980px;
+  padding-block: 54px;
+  color: #211f1c;
+  font-size: 16px;
+  line-height: 27px;
+}
+
+.manifestoColumn,
+.manifestoClosingColumn {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+}
+
+.manifestoColumn {
+  gap: 22px;
+}
+
+.complaintCallout {
+  padding: 22px;
+  border: 2px solid var(--color-background, #050505);
+  background: var(--color-secondary, #f2a51a);
+  box-shadow: 6px 6px 0 var(--color-accent, #ef5b4c);
+}
+
+.complaintCallout ul {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding: 0;
+  margin: 22px 0 0;
+  list-style: none;
+}
+
+.complaintCallout li::before {
+  content: "- ";
+}
+
+.manifestoQuote {
+  box-sizing: border-box;
+  display: flex;
+  height: 300px;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 150px;
+  border-block: 2px solid var(--color-background, #050505);
+  background: var(--color-accent, #ef5b4c);
+  color: var(--color-background, #050505);
+  text-align: center;
+}
+
+.manifestoQuote p {
+  width: 1120px;
+  font-family: var(--font-display, "Bricolage Grotesque"), sans-serif;
+  font-size: 54px;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 60px;
+}
+
+.manifestoBodyTwo {
+  height: 484px;
+  padding-block: 48px;
+  background: var(--color-background, #050505);
+  color: var(--color-foreground, #f2e4c8);
+  font-size: 16px;
+  line-height: 27px;
+}
+
+.manifestoClosingColumn {
+  gap: 20px;
+}
+
+.manifestoSmall {
+  font-size: 15px;
+  line-height: 25px;
+}
+
+.highlightedBelief {
+  color: var(--color-secondary, #f2a51a);
+  font-family: var(--font-display, "Bricolage Grotesque"), sans-serif;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 32px;
+}
+
+.manifestoContact {
+  align-self: flex-start;
+  color: var(--color-primary, #2db7b0);
+  text-decoration: none;
+}
+
+.manifestoContact:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+@media (max-width: 1023px) {
+  .servicesIntro {
+    min-height: auto;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 32px;
+    padding: 64px 32px 40px;
+  }
+
+  .servicesTitle {
+    font-size: clamp(56px, 10vw, 78px);
+    line-height: 0.95;
+  }
+
+  .servicesLead {
+    width: min(100%, 620px);
+    flex-basis: auto;
+  }
+
+  .offerings {
+    height: auto;
+    grid-template-columns: 1fr;
+    padding: 32px;
+  }
+
+  .offeringCard {
+    min-height: 360px;
+    height: auto;
+  }
+
+  .servicesFooter {
+    min-height: auto;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 56px 32px;
+  }
+
+  .servicesStatement {
+    width: 100%;
+    max-width: 760px;
+  }
+
+  .contactStack {
+    align-items: flex-start;
+  }
+
+  .manifestoHero {
+    height: auto;
+    min-height: 380px;
+    padding: 48px 32px 32px;
+  }
+
+  .manifestoHero h1 {
+    font-size: clamp(70px, 13vw, 104px);
+    line-height: 0.9;
+  }
+
+  .manifestoBodyOne,
+  .manifestoBodyTwo {
+    height: auto;
+    grid-template-columns: minmax(0, 680px);
+    gap: 48px;
+    padding: 56px 32px;
+  }
+
+  .manifestoQuote {
+    height: auto;
+    min-height: 260px;
+    padding: 48px 32px;
+  }
+
+  .manifestoQuote p {
+    width: auto;
+    font-size: clamp(38px, 7vw, 52px);
+    line-height: 1.08;
+  }
+}
+
+@media (max-width: 599px) {
+  .servicesIntro,
+  .offerings,
+  .servicesFooter,
+  .manifestoHero,
+  .manifestoBodyOne,
+  .manifestoBodyTwo,
+  .manifestoQuote {
+    padding-inline: 20px;
+  }
+
+  .servicesIntro {
+    padding-block: 48px 32px;
+  }
+
+  .servicesTitle {
+    font-size: clamp(48px, 15vw, 64px);
+  }
+
+  .servicesLead {
+    font-size: 15px;
+    line-height: 24px;
+  }
+
+  .offerings {
+    gap: 20px;
+    padding-block: 24px 32px;
+  }
+
+  .offeringCard {
+    min-height: 390px;
+    padding: 24px;
+  }
+
+  .offeringCopy h2 {
+    font-size: 38px;
+    line-height: 40px;
+  }
+
+  .offeringCopy p {
+    font-size: 15px;
+    line-height: 24px;
+  }
+
+  .offeringMeta {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .servicesFooter {
+    padding-block: 48px;
+  }
+
+  .servicesStatement {
+    font-size: 24px;
+    line-height: 33px;
+  }
+
+  .contactButton {
+    font-size: 13px;
+  }
+
+  .manifestoHero {
+    min-height: 350px;
+    padding-block: 44px 28px;
+  }
+
+  .manifestoHero h1 {
+    font-size: clamp(58px, 18vw, 78px);
+  }
+
+  .manifestoMeta {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 11px;
+    line-height: 16px;
+  }
+
+  .manifestoBodyOne,
+  .manifestoBodyTwo {
+    gap: 40px;
+    padding-block: 44px;
+    font-size: 15px;
+    line-height: 25px;
+  }
+
+  .complaintCallout {
+    padding: 18px;
+  }
+
+  .manifestoQuote {
+    min-height: 280px;
+    padding-block: 44px;
+  }
+
+  .manifestoQuote p {
+    font-size: clamp(34px, 10.5vw, 44px);
+  }
+
+  .manifestoQuote br {
+    display: none;
+  }
+
+  .manifestoBodyTwo,
+  .manifestoSmall {
+    font-size: 15px;
+    line-height: 25px;
+  }
+
+  .highlightedBelief {
+    font-size: 25px;
+    line-height: 32px;
+  }
+}
