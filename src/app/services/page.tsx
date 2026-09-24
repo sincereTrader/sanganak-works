@@ -48,7 +48,7 @@ export default function ServicesPage() {
             </p>
           </div>
           <p className={styles.offeringMeta}>
-            SCOPED PER PROJECT · MONTHLY RETAINERS · FROM $2K
+            SCOPED PER PROJECT · MONTHLY RETAINERS
           </p>
         </article>
       </section>
