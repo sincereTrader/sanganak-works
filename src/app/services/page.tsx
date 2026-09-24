@@ -35,7 +35,7 @@ export default function ServicesPage() {
             </p>
           </div>
           <p className={styles.offeringMeta}>
-            60 MINUTES · 5+ HRS/WEEK BACK OR IT&apos;S FREE · FROM $500
+            60 MINUTES · 5+ HRS/WEEK BACK OR IT&apos;S FREE
           </p>
         </article>
 
