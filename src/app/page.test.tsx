@@ -26,11 +26,14 @@ describe("Home", () => {
     );
   });
 
-  it("omits the manifesto CTA", () => {
+  it("links the deserve headline word to the manifesto", () => {
     render(<Home />);
 
     expect(screen.queryByText(/enter the manifesto/i)).not.toBeInTheDocument();
-    expect(screen.queryByRole("link", { name: /manifesto/i })).not.toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "deserve" })).toHaveAttribute(
+      "href",
+      "/manifesto",
+    );
   });
 
   it("provides a skip-link target", () => {

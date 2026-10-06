@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export function HomeHero() {
   return (
@@ -13,7 +14,10 @@ export function HomeHero() {
             <br />
             for those who
             <br />
-            deserve it.
+            <Link className="hero-manifesto-link" href="/manifesto">
+              deserve
+            </Link>{" "}
+            it.
           </h1>
           <p>
             We build, write, and advise about tech and culture; from India for the

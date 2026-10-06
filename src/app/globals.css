@@ -196,6 +196,29 @@ a:focus-visible {
   line-height: 0.9565;
 }
 
+.hero-manifesto-link {
+  position: relative;
+}
+
+.hero-manifesto-link::after {
+  position: absolute;
+  right: 0;
+  bottom: 0.04em;
+  left: 0;
+  height: 2px;
+  background: var(--color-teal);
+  content: "";
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 160ms ease;
+}
+
+.hero-manifesto-link:hover::after,
+.hero-manifesto-link:focus-visible::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
 @media (min-width: 1024px) {
   .hero-copy h1 {
     white-space: nowrap;
