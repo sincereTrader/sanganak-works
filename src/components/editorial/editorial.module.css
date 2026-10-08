@@ -3,7 +3,7 @@
   overflow: clip;
   background: var(--color-foreground, #f2e4c8);
   color: var(--color-background, #050505);
-  font-family: var(--font-ui, var(--font-mono, "IBM Plex Mono")), monospace;
+  font-family: var(--font-ui, var(--font-mono, "Paper Term")), monospace;
   overflow-wrap: anywhere;
 }
 

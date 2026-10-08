@@ -12,7 +12,7 @@
   overflow: hidden;
   background: var(--ink);
   color: var(--cream);
-  font-family: var(--font-mono, "IBM Plex Mono", monospace);
+  font-family: var(--font-mono, "Paper Term", monospace);
 }
 
 .container {

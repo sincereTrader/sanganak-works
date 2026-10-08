@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Bricolage_Grotesque, IBM_Plex_Mono } from "next/font/google";
+import { Bricolage_Grotesque } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
 const displayFont = Bricolage_Grotesque({
@@ -8,11 +9,32 @@ const displayFont = Bricolage_Grotesque({
   display: "swap",
 });
 
-const monoFont = IBM_Plex_Mono({
+// Paper Term (SIL OFL 1.1, see ./fonts/paper-term/OFL.txt): Paper Mono with
+// the single-story a, slashed zero and coding ligatures baked in.
+const monoFont = localFont({
+  src: [
+    { path: "./fonts/paper-term/PaperTerm-Regular.woff2", weight: "400" },
+    { path: "./fonts/paper-term/PaperTerm-Medium.woff2", weight: "500" },
+    { path: "./fonts/paper-term/PaperTerm-Bold.woff2", weight: "700" },
+  ],
+  style: "normal",
+  declarations: [{ prop: "font-family", value: "Paper Term" }],
   variable: "--font-mono",
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
   display: "swap",
+  adjustFontFallback: false,
+  // Turbopack names the family after the JS identifier in --font-mono and
+  // ignores the font-family declaration above, so list "Paper Term" here too.
+  fallback: [
+    "Paper Term",
+    "ui-monospace",
+    "SFMono-Regular",
+    "Menlo",
+    "Monaco",
+    "Consolas",
+    "Liberation Mono",
+    "Courier New",
+    "monospace",
+  ],
 });
 
 export const metadata: Metadata = {
