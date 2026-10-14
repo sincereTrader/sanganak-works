@@ -13,15 +13,15 @@ export default function IntegrationEngineerPage() {
         <p>
           With <SarasLink />, we&apos;re building the accountability systems of the future for busy
           professionals, starting with standardized test prep. This role is about meeting students
-          where they already are: their browser, their calendar and their payment methods.
+          where they already are, inside the tools and platforms they use every day.
         </p>
       }
       about={[
-        "Build a GMAT Club Chrome extension and companion browser tools",
-        "Set up native calendar integration",
-        "Build payment failsafes so revenue never leaks silently",
+        "Own a broad range of third-party setups, from browser tooling to external APIs and services",
+        "Bring Saras into the platforms students already use, without adding friction",
+        "Harden every integration so nothing, data or revenue, ever fails silently",
       ]}
-      task="Set up v1 of the GMAT Chrome extension as scoped."
+      task="Ship v1 of a scoped integration, end to end."
       terms={[
         <><strong>Duration:</strong> 2-week probation, followed by 2 weeks</>,
         <><strong>Compensation:</strong> ₹30k/month, plus 5% rev share and token usage covered</>,
@@ -29,7 +29,7 @@ export default function IntegrationEngineerPage() {
       ]}
       criteria={[
         "Experience building browser extensions or client-side integrations",
-        "Fluency with third-party APIs (calendars, payments) and the failure modes that come with them",
+        "Fluency with third-party APIs and the failure modes that come with them",
         <>Above all, apply only if this resonates with you strongly: <ManifestoLink /> — be prepared to ask and answer questions!</>,
       ]}
       resumeNote="Applicants with compelling GitHub profiles or portfolios will be preferred over swanky resumes."

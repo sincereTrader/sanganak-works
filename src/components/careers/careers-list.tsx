@@ -29,7 +29,7 @@ const roles: readonly Role[] = [
     title: "Integration Engineer",
     href: "/careers/integration-engineer",
     blurb:
-      "Build the GMAT Club Chrome extension, browser tools, native calendar integration and payment failsafes.",
+      "Own a broad range of third-party integrations that meet students where they already are, and never fail silently.",
     meta: "REMOTE · 2-WEEK PROBATION + 2 WEEKS · ₹30K + 5% REV SHARE →",
     tag: "Saras",
     theme: styles.cardAmber,
