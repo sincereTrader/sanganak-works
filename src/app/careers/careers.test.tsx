@@ -72,24 +72,20 @@ describe("Careers routes", () => {
 
     const filters = screen.getByRole("group", { name: "Filter open roles by product" });
     const sarasFilter = within(filters).getByRole("button", { name: "Saras" });
-    const masalaDewFilter = within(filters).getByRole("button", { name: "Masala Dew" });
     const clearFilter = within(filters).getByRole("button", { name: "Clear filters" });
 
+    expect(within(filters).queryByRole("button", { name: "Masala Dew" })).not.toBeInTheDocument();
     expect(sarasFilter).toHaveAttribute("aria-pressed", "false");
-    expect(masalaDewFilter).toHaveAttribute("aria-pressed", "false");
     expect(clearFilter).toBeDisabled();
 
-    await user.click(masalaDewFilter);
+    await user.click(sarasFilter);
 
-    expect(masalaDewFilter).toHaveAttribute("aria-pressed", "true");
-    expect(await screen.findByText("No open roles for Masala Dew right now.")).toBeInTheDocument();
-    for (const [name] of listedRoles) {
-      expect(screen.queryByRole("link", { name: new RegExp(`^${name}`) })).not.toBeInTheDocument();
-    }
+    expect(sarasFilter).toHaveAttribute("aria-pressed", "true");
+    expect(clearFilter).toBeEnabled();
 
     await user.click(clearFilter);
 
-    expect(masalaDewFilter).toHaveAttribute("aria-pressed", "false");
+    expect(sarasFilter).toHaveAttribute("aria-pressed", "false");
     expect(clearFilter).toBeDisabled();
     for (const [name] of listedRoles) {
       expect(await screen.findByRole("link", { name: new RegExp(`^${name}`) })).toBeInTheDocument();

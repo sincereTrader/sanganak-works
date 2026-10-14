@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import styles from "./careers.module.css";
 
-const productTags = ["Saras", "Masala Dew"] as const;
+const productTags = ["Saras"] as const;
 type ProductTag = (typeof productTags)[number];
 
 type Role = {
