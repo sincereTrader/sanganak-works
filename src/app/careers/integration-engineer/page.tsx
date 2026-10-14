@@ -24,7 +24,6 @@ export default function IntegrationEngineerPage() {
       task="Ship v1 of a scoped integration, end to end."
       terms={[
         <><strong>Duration:</strong> 2-week probation, followed by 2 weeks</>,
-        <><strong>Compensation:</strong> ₹30k/month plus token usage covered</>,
         <><strong>Work style:</strong> Remote-first, high-trust and outcome-driven</>,
       ]}
       criteria={[

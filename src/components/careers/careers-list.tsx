@@ -21,7 +21,7 @@ const roles: readonly Role[] = [
     title: "Agent Engineer (Intern)",
     href: "/careers/agent-engineer",
     blurb: "Set up agent environments and structure, and make the process repeatable.",
-    meta: "REMOTE · 2-WEEK PROBATION + 1 MONTH · ₹20-30K + TOKEN USAGE →",
+    meta: "REMOTE · 2-WEEK PROBATION + 1 MONTH →",
     tag: "Saras",
     theme: styles.cardDark,
   },
@@ -30,7 +30,7 @@ const roles: readonly Role[] = [
     href: "/careers/integration-engineer",
     blurb:
       "Explore, build and rebuild third-party integrations and MCP servers, and keep them reliable.",
-    meta: "REMOTE · 2-WEEK PROBATION + 2 WEEKS · ₹30K + TOKEN USAGE →",
+    meta: "REMOTE · 2-WEEK PROBATION + 2 WEEKS →",
     tag: "Saras",
     theme: styles.cardAmber,
   },
@@ -39,7 +39,7 @@ const roles: readonly Role[] = [
     href: "/careers/platform-engineer",
     blurb:
       "Set up auth, manage CI/CD and cloud deployments to scale agent infrastructure to 1000+ concurrent users.",
-    meta: "REMOTE · ₹30K + TOKEN USAGE · INFRASTRUCTURE →",
+    meta: "REMOTE · INFRASTRUCTURE →",
     tag: "Saras",
     theme: styles.cardTeal,
   },

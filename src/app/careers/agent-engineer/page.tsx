@@ -25,7 +25,6 @@ export default function AgentEngineerPage() {
       task="Set up the coaching bot."
       terms={[
         <><strong>Duration:</strong> 2-week probation, followed by 1 month</>,
-        <><strong>Compensation:</strong> ₹20-30k/month plus token usage covered</>,
         <><strong>Work style:</strong> Remote-first, high-trust and outcome-driven</>,
       ]}
       criteria={[
