@@ -12,22 +12,22 @@ export default function PlatformEngineerPage() {
       intro={
         <p>
           With <SarasLink />, we&apos;re building the accountability systems of the future for busy
-          professionals, starting with standardized test prep. Behind every Saras instance is a
-          platform that has to stay up, stay secure and scale. You&apos;d own that layer.
+          professionals, starting with standardized test prep. Behind it is a platform that has to stay
+          up, stay secure and scale. You&apos;d own that layer.
         </p>
       }
       about={[
-        "Set up auth across the platform",
-        "Manage CI/CD and cloud deployments",
-        "Scale the agent infrastructure to 1000+ concurrent users with room to keep growing",
+        "Own DevOps end to end: CI/CD, cloud hosting, deployments and environments",
+        "Design networking, access and auth so the platform stays secure by default",
+        "Keep infrastructure reliable, observable and ready to scale as usage grows",
       ]}
-      task="Spec out and set up a new VPS for managing 100 Saras instances in parallel, each with their own tools and automations."
+      task="Spec out and stand up a scoped piece of infrastructure, end to end."
       terms={[
         <><strong>Work style:</strong> Remote-first, high-trust and outcome-driven</>,
       ]}
       criteria={[
-        "Experience with cloud infrastructure, CI/CD pipelines and Linux servers",
-        "A security mindset, especially around auth and multi-tenant systems",
+        "Experience with cloud hosting, DevOps, CI/CD pipelines, networking and Linux servers",
+        "A security mindset, especially around auth, access control and multi-tenant systems",
         <>Above all, apply only if this resonates with you strongly: <ManifestoLink /> — be prepared to ask and answer questions!</>,
       ]}
       resumeNote="Applicants with compelling GitHub profiles or portfolios will be preferred over swanky resumes."

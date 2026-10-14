@@ -31,7 +31,7 @@ const roleRoutes = [
   {
     Page: PlatformEngineerPage,
     title: "Platform Engineer",
-    criticalCopy: "Scale the agent infrastructure to 1000+ concurrent users with room to keep growing",
+    criticalCopy: "Keep infrastructure reliable, observable and ready to scale as usage grows",
     product: "Saras",
   },
   {

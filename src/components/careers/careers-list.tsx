@@ -38,7 +38,7 @@ const roles: readonly Role[] = [
     title: "Platform Engineer",
     href: "/careers/platform-engineer",
     blurb:
-      "Set up auth, manage CI/CD and cloud deployments to scale agent infrastructure to 1000+ concurrent users.",
+      "Own DevOps, cloud hosting, networking and security for a platform built to scale.",
     meta: "REMOTE · INFRASTRUCTURE →",
     tag: "Saras",
     theme: styles.cardTeal,
