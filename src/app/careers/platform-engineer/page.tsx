@@ -23,7 +23,7 @@ export default function PlatformEngineerPage() {
       ]}
       task="Spec out and set up a new VPS for managing 100 Saras instances in parallel, each with their own tools and automations."
       terms={[
-        <><strong>Compensation:</strong> ₹30k/month, plus 5% rev share and token usage covered</>,
+        <><strong>Compensation:</strong> ₹30k/month plus token usage covered</>,
         <><strong>Work style:</strong> Remote-first, high-trust and outcome-driven</>,
       ]}
       criteria={[

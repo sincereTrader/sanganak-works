@@ -30,7 +30,7 @@ const roles: readonly Role[] = [
     href: "/careers/integration-engineer",
     blurb:
       "Explore, build and rebuild third-party integrations and MCP servers, and keep them reliable.",
-    meta: "REMOTE · 2-WEEK PROBATION + 2 WEEKS · ₹30K + 5% REV SHARE →",
+    meta: "REMOTE · 2-WEEK PROBATION + 2 WEEKS · ₹30K + TOKEN USAGE →",
     tag: "Saras",
     theme: styles.cardAmber,
   },
@@ -39,7 +39,7 @@ const roles: readonly Role[] = [
     href: "/careers/platform-engineer",
     blurb:
       "Set up auth, manage CI/CD and cloud deployments to scale agent infrastructure to 1000+ concurrent users.",
-    meta: "REMOTE · ₹30K + 5% REV SHARE · INFRASTRUCTURE →",
+    meta: "REMOTE · ₹30K + TOKEN USAGE · INFRASTRUCTURE →",
     tag: "Saras",
     theme: styles.cardTeal,
   },
