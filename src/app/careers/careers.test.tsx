@@ -25,7 +25,7 @@ const roleRoutes = [
   {
     Page: IntegrationEngineerPage,
     title: "Integration Engineer",
-    criticalCopy: "Harden every integration so nothing, data or revenue, ever fails silently",
+    criticalCopy: "Keep integrations reliable and observable, so nothing ever fails silently",
     product: "Saras",
   },
   {

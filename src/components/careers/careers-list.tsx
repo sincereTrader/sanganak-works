@@ -29,7 +29,7 @@ const roles: readonly Role[] = [
     title: "Integration Engineer",
     href: "/careers/integration-engineer",
     blurb:
-      "Explore, build and rebuild third-party integrations and MCP servers that bring Saras to where students already are.",
+      "Explore, build and rebuild third-party integrations and MCP servers, and keep them reliable.",
     meta: "REMOTE · 2-WEEK PROBATION + 2 WEEKS · ₹30K + 5% REV SHARE →",
     tag: "Saras",
     theme: styles.cardAmber,
