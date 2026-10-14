@@ -17,8 +17,8 @@ export default function IntegrationEngineerPage() {
         </p>
       }
       about={[
-        "Own a broad range of third-party setups, from browser tooling to external APIs and services",
-        "Bring Saras into the platforms students already use, without adding friction",
+        "Explore a broad range of third-party integrations: prototype fast, discard what doesn't stick, rebuild what does",
+        "Build MCP servers that expose Saras to the agents and tools students already use",
         "Harden every integration so nothing, data or revenue, ever fails silently",
       ]}
       task="Ship v1 of a scoped integration, end to end."
@@ -28,8 +28,8 @@ export default function IntegrationEngineerPage() {
         <><strong>Work style:</strong> Remote-first, high-trust and outcome-driven</>,
       ]}
       criteria={[
-        "Experience building browser extensions or client-side integrations",
-        "Fluency with third-party APIs and the failure modes that come with them",
+        "Experience building browser extensions, client-side integrations or MCP servers",
+        "Fluency with third-party APIs and the failure modes that come with them, and comfort throwing work away when it doesn't pan out",
         <>Above all, apply only if this resonates with you strongly: <ManifestoLink /> — be prepared to ask and answer questions!</>,
       ]}
       resumeNote="Applicants with compelling GitHub profiles or portfolios will be preferred over swanky resumes."
