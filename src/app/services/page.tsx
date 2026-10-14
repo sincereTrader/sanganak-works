@@ -3,7 +3,7 @@ import styles from "@/components/editorial/editorial.module.css";
 import { Nav } from "@/components/nav";
 
 export const metadata: Metadata = {
-  title: "Services — Sanganak Works",
+  title: "Services · Sanganak Works",
   description:
     "AI workflow advice and agent builds for small teams that want their hours back.",
 };

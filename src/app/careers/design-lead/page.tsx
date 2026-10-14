@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { ManifestoLink, RoleDetail, SarasLink } from "@/components/careers/role-detail";
 
-export const metadata: Metadata = { title: "Lead, Design and Branding — Sanganak Works" };
+export const metadata: Metadata = { title: "Lead, Design and Branding · Sanganak Works" };
 
 export default function DesignLeadPage() {
   return (
